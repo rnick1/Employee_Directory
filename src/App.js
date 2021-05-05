@@ -1,17 +1,12 @@
 import './App.css';
 import React from 'react';
-import { Navbar, Nav, Button,Table } from 'react-bootstrap';
+import { Table } from 'react-bootstrap';
+import MainNavbar from "./components/Navbar";
 
 function App() {
   return (
     <div>
-  <Navbar className="navbar navbar-expand-lg navbar-dark bg-dark">
-    <Navbar.Brand href="#home">Employee Directory</Navbar.Brand>
-    <Nav className="mr-auto">
-      <input type="text" placeholder="Search…" id="docs-search-input" class="form-control ds-input" autocomplete="off" spellcheck="false" dir="auto"/>
-      <Button variant="secondary">Search</Button>{' '}
-    </Nav>
-  </Navbar>
+      <MainNavbar/>
           <div class="container">
           <div class="row-A"></div>
           <br/>

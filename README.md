@@ -33,3 +33,17 @@ None
 rnick1
 
 ### If you have any questions, please contact Nick Rider at: rnick0260@gmail.com
+
+### **--------------------------------------------------------------------------**
+
+## Acceptance Criteria
+
+Given a table of random users generated from the [Random User API](https://randomuser.me/), when the user loads the page, a table of employees should render.
+
+The user should be able to:
+
+- Sort the table by at least one category
+
+- Filter the users by at least one property.
+
+- **Important**: Be sure to push your codebase to GitHub and **NOT** your built and deployed code. Ensure this happens by following the above instructions and using the `gh-pages` branch to host the deployed application's code.
