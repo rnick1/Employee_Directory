@@ -1,7 +1,7 @@
-const axios = require('axios')
+const axios = require('axios');
 
-function getUser() {
-    return axios.get('https://randomuser.me/api/?results=5000')
+function getEmployees() {
+    return axios.get('https://randomuser.me/api/?results=30')
 }
 
-export default getUser;
+export default getEmployees

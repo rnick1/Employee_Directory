@@ -1,7 +1,31 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Table } from 'react-bootstrap';
+import getEmployees from '../../utils/API.js';
+import EmployeeData from '../EmployeeData/index.js';
+import Buttons from '../Buttons/index.js';
 
 function MainTable () {
+    const [state, setState] = useState({ 
+        employees: [ ],
+    });
+useEffect(() => {
+    getEmployees().then((response) => {
+        setState({
+            ...state,
+            employees: response.data.results
+        })
+    })
+}, [])
+
+// handleAscending(() => {
+
+// })
+
+// handleDescending(() => {
+
+// })
+
+console.log(state.employees)
     return (
             <div class="container">
             <div class="row-A"></div>
@@ -13,39 +37,22 @@ function MainTable () {
                 <div class="row no-gutters">
                     <section class="card-body text-center">
                     <h2 class="card-title mb-1">Employees</h2>
+                    <Buttons/>
                     <div>
                     <Table striped bordered hover size="sm">
                         <thead>
                         <tr>
-                            <th>#</th>
                             <th>First Name</th>
                             <th>Last Name</th>
                             <th>Email</th>
                             <th>Username</th>
+                            <th>Gender</th>
                         </tr>
                         </thead>
                         <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                            <td>@mdo</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@mdo</td>
-                            <td>@fat</td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>Larry</td>
-                            <td>Bird</td>
-                            <td>Bird</td>
-                            <td>@twitter</td>
-                        </tr>
+                            {state.employees.map((employee) => {
+                                return <EmployeeData employee = {employee}/>
+                            })}
                         </tbody>
                     </Table>
                     </div>
